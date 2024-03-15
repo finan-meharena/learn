@@ -1,0 +1,14 @@
+# Why redux ? --> State Management, Centralized data storage, transparent
+
+
+Pros    predictable
+        Centralized
+        Easy Debugging
+        Preserve Page State
+        Undo/Redo
+
+Cons    Complexity coz based on functional programming
+        verbosity
+        
+
+       
