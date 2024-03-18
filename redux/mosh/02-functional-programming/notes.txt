@@ -1,0 +1,9 @@
+functional programing :   concise, easier to debug, easy to test
+
+functions in javascript : first class variables (treated as variables)
+
+higher order functional: function that takes/returns function or does both
+
+pure function   is a function that returns a value that is computed based on its input arguments
+                example of a pure function is Math.abs(-1)
+                example of a non-pure functions are Date.now() and Math.random()
