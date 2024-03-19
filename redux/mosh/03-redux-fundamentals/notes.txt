@@ -1,0 +1,5 @@
+reducer - func thats takes current store state and returns a new store state
+action - js object that describes what just happend (use logged in, item added to cart ..)
+
+
+Event(Action) is dispatched --> Store Calls reducer --> Reducer return new store state.
