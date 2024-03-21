@@ -1,14 +1,25 @@
+import * as actionsTpes from "./actionTypes"
 
 export const bugAdded = description => ({
-  type: BUG_ADDED,
+  type: actionsTpes.BUG_ADDED,
   payload: {
     description
   }
 })
 
 export const bugResolved = id => ({
-  type: BUG_RESOLVED,
+  type: actionsTpes.BUG_RESOLVED,
   payload: {
     id
   }
 })
+
+export const bugRemoved = id => ({
+  type: actionsTpes.BUG_REMOVED,
+  payload: {
+    id
+  }
+})
+
+
+

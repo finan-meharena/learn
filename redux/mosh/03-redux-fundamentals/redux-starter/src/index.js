@@ -1,5 +1,5 @@
 import store from './store';
-import { bugAdded, bugRemoved } from './actionCreator';
+import { bugAdded, bugRemoved, bugResolved } from './actionCreator';
 
 
 const unsubscribe = store.subscribe(() => {         // subscribe method returns a function that can be used to unsubscribe the listener.
@@ -7,6 +7,10 @@ const unsubscribe = store.subscribe(() => {         // subscribe method returns 
 })
 
 store.dispatch(bugAdded("Bug 1"));
+store.dispatch(bugAdded("Bug 2"));
+store.dispatch(bugAdded("Bug 3"));
+store.dispatch(bugResolved(1))
+store.dispatch(bugResolved(2))
 
 unsubscribe(); // unsubscribing the listener, no notification will be received after this line.
 
