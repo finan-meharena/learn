@@ -1,10 +1,10 @@
-import {createAction} from "@reduxjs/toolkit"
+import {createAction, createReducer} from "@reduxjs/toolkit"
 
 const action = createAction("bugUpdated")
 // console.log(action({id : 1}));
 // console.log(action.type)
 
-// Action types --> we dont need those constants coz we can get them fromteh creationAction result's type property
+// Action types --> we dont need those constants coz we can get them from the creationAction result's type property
 // const BUG_ADDED = 'bugAdded';
 // const BUG_REMOVED = 'bugRemoved';
 // const BUG_RESOLVED = 'bugResolved';
@@ -19,30 +19,33 @@ export const bugRemoved = createAction("bugRemoved");
 // Reducer
 let lastId = 0;
 
-function reducer (state =  [], action){
+export default createReducer([], {
+    // key : value pairs (key = actions, value = functions that handle those actions)
+    [bugAdded.type]: (bugs, action) => { // this is mutating code, redux uses immer to apply changes
+        bugs.push({
+            id: ++lastId,
+            description: action.payload.description,
+            resolved: false
+        })
+    },
+    // bugAdded: (bugs, action) => { // this is mutating code, redux uses immer to apply changes
+    //     bugs.push({
+    //         id: ++lastId,
+    //         description: action.payload.description,
+    //         resolved: false
+    //     })
+    // },
+    // dynamically compute action name
+    [bugResolved.type]: (bugs, action) =>{
+        const index = bugs.findIndex(bug => bug.id === action.payload.id)
+        bugs[index].resolved = true;
+    },
+    // bugResolved: (bugs, action) =>{
+    //     const index = bugs.findIndex(bug => bug.id === action.payload.id)
+    //     bugs[index].resolved = true;
+    // },
 
-    switch (action.type) {
-        case bugAdded.type:
-            return [
-                ...state,
-                {
-                    id: ++lastId,
-                    description: action.payload.description,
-                    resolved: false
-                }
-            ];
-        case bugRemoved.type:
-            return state.filter(bug => bug.id !== action.payload.id);
-        case bugResolved.type:
-            return state.map(bug => bug.id === action.payload.id ? (
-                {...bug, resolved: true}
-            ) : bug);
-            
-        default:
-            return state;
-    }
-}
+})
 
-export default reducer;
 
 
