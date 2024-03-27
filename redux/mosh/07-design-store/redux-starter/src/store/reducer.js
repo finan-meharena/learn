@@ -1,9 +1,6 @@
-import {combineReducers} from 'redux'
-import bugsReducer from './bugs'
-import projectsReducer from './projects'
+import { combineReducers } from "redux";
+import entitiesReducer from './entities'
 
-
-export default combineReducers({
-    bugs: bugsReducer,
-    projects: projectsReducer
+export default combineReducers ({
+    entities : entitiesReducer
 })
