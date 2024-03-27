@@ -1,9 +1,12 @@
-const result = function (one) {
+const result = function (message) {
     return function (two) {
       return function (three) {
-        return (one + two + three)
+        return function (four){
+          return `${message} : ${two + three + four}`
+        }
       };
     };
   };
 
-console.log(result(1)(2)(3))
+console.log(result("result")(1)(2)(3))
+
