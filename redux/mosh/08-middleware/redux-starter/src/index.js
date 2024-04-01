@@ -13,6 +13,11 @@ store.dispatch((dispatch, getState) => {
     console.log(getState())
 })
 
+store.dispatch({
+    type: "error",
+    message : "An error occured"
+})
+
 // store.dispatch(userAdded({name : "finan"}))
 // store.dispatch(userAdded({name : "kidane"}))
 // // store.dispatch(projectAdded({ name: "Project 1" }));
