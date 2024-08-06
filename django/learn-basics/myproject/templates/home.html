@@ -1,13 +1,10 @@
+{% extends "layout.html" %}
 
-<!DOCTYPE html>
-{% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Home</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
-<body>
-    <h1> Check out my <a href="/about/">About</a> page</h1>
-</body>
-</html>
+{% block title %}
+    Home
+{% endblock title %}
+    
+{% block content %}
+    <h1>Home</h1>
+    <p>Check out my <a href="/about">About </a> page too! </p>
+{% endblock content %}
