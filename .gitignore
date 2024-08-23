@@ -1,3 +1,4 @@
+.DS_Store
 redux/mosh/01-getting-started/redux-starter/node_modules/
 redux/mosh/03-redux-fundamentals/node_modules/
 redux/mosh/03-redux-fundamentals/redux-starter/node_modules
@@ -7,4 +8,6 @@ redux/mosh/06-clean-redux-code/redux-starter/node_modules
 redux/mosh/07-design-store/redux-starter/node_modules
 redux/mosh/08-middleware/redux-starter/node_modules
 redux/mosh/09-consuming-api/redux-starter/node_modules
-.DS_Store
+
+
+
