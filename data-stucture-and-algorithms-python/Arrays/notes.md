@@ -1,1 +1,0 @@
-![alt text](number-in-binary.png)
