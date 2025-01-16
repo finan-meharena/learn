@@ -2,7 +2,7 @@ from django.views.generic import ListView
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.core.mail import send_mail
 from django.views.decorators.http import require_POST
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import Http404
 from .models import Post
 from .forms import EmailPostForm, CommentForm
@@ -99,8 +99,13 @@ def post_comment(request, post_id):
         comment.save()  
     return render(
         request,
-        'blog/post/comment.html'
-    )
+        'blog/post/comment.html',
+            {
+            'post': post,
+            'form': form,
+            'comment': comment
+            }
+            )
 
 # class based views
 
